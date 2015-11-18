@@ -1,4 +1,4 @@
-package org.jenkinsci.plugins.parameterizedschedular;
+package org.jenkinsci.plugins.parameterizedscheduler;
 
 import java.lang.reflect.Field;
 

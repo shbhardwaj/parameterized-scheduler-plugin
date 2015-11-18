@@ -1,4 +1,4 @@
-package org.jenkinsci.plugins.parameterizedschedular;
+package org.jenkinsci.plugins.parameterizedscheduler;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,9 +1,11 @@
-package org.jenkinsci.plugins.parameterizedschedular;
+package org.jenkinsci.plugins.parameterizedscheduler;
 
 import static org.junit.Assert.assertEquals;
 
 import java.util.Map;
 
+import org.jenkinsci.plugins.parameterizedscheduler.Messages;
+import org.jenkinsci.plugins.parameterizedscheduler.ParameterizedTimerTriggerCause;
 import org.junit.Test;
 
 import com.google.common.collect.Maps;

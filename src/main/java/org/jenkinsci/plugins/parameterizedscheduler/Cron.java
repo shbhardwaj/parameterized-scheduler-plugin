@@ -1,4 +1,4 @@
-package org.jenkinsci.plugins.parameterizedschedular;
+package org.jenkinsci.plugins.parameterizedscheduler;
 
 import hudson.Extension;
 import hudson.model.PeriodicWork;

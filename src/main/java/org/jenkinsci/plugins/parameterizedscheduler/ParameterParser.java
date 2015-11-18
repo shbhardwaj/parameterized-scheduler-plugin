@@ -1,4 +1,4 @@
-package org.jenkinsci.plugins.parameterizedschedular;
+package org.jenkinsci.plugins.parameterizedscheduler;
 
 import hudson.model.ParametersDefinitionProperty;
 
@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
+import org.jenkinsci.plugins.parameterizedscheduler.Messages;
 
 import com.google.common.base.Splitter;
 import com.google.common.collect.Maps;

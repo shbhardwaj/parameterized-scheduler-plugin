@@ -1,4 +1,4 @@
-package org.jenkinsci.plugins.parameterizedschedular;
+package org.jenkinsci.plugins.parameterizedscheduler;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -8,6 +8,7 @@ import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.Map;
 
+import org.jenkinsci.plugins.parameterizedscheduler.ParameterizedCronTab;
 import org.junit.Test;
 import org.jvnet.localizer.LocaleProvider;
 

@@ -1,4 +1,4 @@
-package org.jenkinsci.plugins.parameterizedschedular;
+package org.jenkinsci.plugins.parameterizedscheduler;
 
 import static hudson.Util.fixNull;
 import hudson.Extension;
@@ -8,6 +8,7 @@ import hudson.model.ParametersDefinitionProperty;
 import hudson.triggers.TriggerDescriptor;
 import hudson.util.FormValidation;
 
+import org.jenkinsci.plugins.parameterizedscheduler.Messages;
 import org.kohsuke.stapler.AncestorInPath;
 import org.kohsuke.stapler.QueryParameter;
 

@@ -1,4 +1,4 @@
-package org.jenkinsci.plugins.parameterizedschedular;
+package org.jenkinsci.plugins.parameterizedscheduler;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
@@ -8,6 +8,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
+import org.jenkinsci.plugins.parameterizedscheduler.Messages;
+import org.jenkinsci.plugins.parameterizedscheduler.ParameterParser;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;

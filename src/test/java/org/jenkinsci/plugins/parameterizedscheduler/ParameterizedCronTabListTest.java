@@ -1,4 +1,4 @@
-package org.jenkinsci.plugins.parameterizedschedular;
+package org.jenkinsci.plugins.parameterizedscheduler;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
@@ -9,6 +9,8 @@ import java.util.Arrays;
 import java.util.GregorianCalendar;
 import java.util.Map;
 
+import org.jenkinsci.plugins.parameterizedscheduler.ParameterizedCronTab;
+import org.jenkinsci.plugins.parameterizedscheduler.ParameterizedCronTabList;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
