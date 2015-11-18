@@ -14,7 +14,7 @@
 
 	<name>Parameterized Scheduler</name>
 	<description>Lets you define many cron-like format but with additional parameters for each definition</description>
-	<url>https://github.com/jwmach1/parameterized-scheduler</url>
+	<url>https://wiki.jenkins-ci.org/display/JENKINS/Parameterized+Scheduler+Plugin</url>
 	<licenses>
 		<license>
 			<name>MIT License</name>
