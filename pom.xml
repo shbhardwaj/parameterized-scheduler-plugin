@@ -23,6 +23,15 @@
 		</license>
 	</licenses>
 
+	<developers>
+		<developer>
+			<id>batmat</id>
+			<name>Baptiste Mathus</name>
+			<email>batmat@batmat.net</email>
+			<timezone>Europe/Paris</timezone>
+		</developer>
+	</developers>
+
 	<scm>
 		<connection>scm:git:git://github.com/jenkinsci/parameterized-scheduler.git</connection>
 		<developerConnection>scm:git:git://github.com/jenkinsci/parameterized-scheduler.git</developerConnection>
