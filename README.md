@@ -15,7 +15,7 @@ After you save your project with some parameters (yes, save, then go back into t
 
 in the *Build Triggers* section as shown here:
 
-![Parameterized Schedular Config](https://raw2.github.com/jwmach1/parameterized-scheduler/master/site/images/configurationexample.png)
+![Parameterized Schedular Config](https://raw.githubusercontent.com/jenkinsci/parameterized-scheduler-plugin/master/site/images/configurationexample.png)
 
 ## Configuration Example ##
 The cron line before the _%_ symbol is processed the same as the jenkins core _Build periodically Schedule_. Leave a space. Put in a _%_. Then add the name=value pairs you need for your project build parameters.
