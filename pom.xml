@@ -1,15 +1,17 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.jenkins-ci.plugins</groupId>
 		<artifactId>plugin</artifactId>
-		<version>1.509.4</version><!-- which version of Jenkins is this plugin 
-			built against? -->
+		<version>1.509.4</version>
 	</parent>
 
-	<groupId>org.jenkins-ci.plugins</groupId>
 	<artifactId>parameterized-scheduler</artifactId>
-	<version>1.2-SNAPSHOT</version>
+	<name>Parameterized Scheduler</name>
+	<version>0.8-SNAPSHOT</version>
+	<description>Lets you define many cron-like format but with additional parameters for each definition</description>
 	<packaging>hpi</packaging>
 	<url>https://github.com/jwmach1/parameterized-scheduler</url>
 
@@ -17,10 +19,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
-	<issueManagement>
-		<url>https://github.com/jwmach1/parameterized-scheduler/issues</url>
-		<system>GitHub Issues</system>
-	</issueManagement>
 
 	<licenses>
 		<license>
@@ -31,14 +29,12 @@
 	</licenses>
 
 	<scm>
-		<url>https://github.com/jwmach1/parameterized-scheduler</url>
-		<connection>scm:git:https://github.com/jwmach1/parameterized-scheduler.git</connection>
-		<developerConnection>scm:git:https://github.com/jwmach1/parameterized-scheduler.git</developerConnection>
-	  <tag>HEAD</tag>
-  </scm>
+		<connection>scm:git:git://github.com/jenkinsci/parameterized-scheduler.git</connection>
+		<developerConnection>scm:git:git://github.com/jenkinsci/parameterized-scheduler.git</developerConnection>
+		<url>https://github.com/jenkinsci/parameterized-scheduler</url>
+		<tag>HEAD</tag>
+	</scm>
 
-	<!-- get every artifact through repo.jenkins-ci.org, which proxies all the 
-		artifacts that we need -->
 	<repositories>
 		<repository>
 			<id>repo.jenkins-ci.org</id>
