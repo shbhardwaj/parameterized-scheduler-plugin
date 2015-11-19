@@ -9,7 +9,7 @@
 	</parent>
 
 	<artifactId>parameterized-scheduler</artifactId>
-	<version>0.2</version>
+	<version>0.3-SNAPSHOT</version>
 	<packaging>hpi</packaging>
 
 	<name>Parameterized Scheduler</name>
@@ -36,7 +36,7 @@
 		<connection>scm:git:git://github.com/jenkinsci/parameterized-scheduler.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com/jenkinsci/parameterized-scheduler.git</developerConnection>
 		<url>https://github.com/jenkinsci/parameterized-scheduler</url>
-		<tag>parameterized-scheduler-0.2</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<repositories>
