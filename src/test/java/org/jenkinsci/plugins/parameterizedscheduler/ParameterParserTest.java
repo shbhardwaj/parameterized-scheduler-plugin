@@ -82,6 +82,16 @@ public class ParameterParserTest {
 	}
 
 	@Test
+	public void test_TwoParamsStringWithSpaceReturns_emptyMap() {
+		ParameterParser testObject = new ParameterParser();
+
+		HashMap<String, String> expected = new HashMap<String, String>();
+		expected.put("name", "value");
+		expected.put("name2", "value2");
+		assertEquals(expected, testObject.parse("name2=value2; name=value"));
+	}
+
+	@Test
 	public void checkSanity_HappyPath() throws Exception {
 		ParameterParser testObject = new ParameterParser();
 
