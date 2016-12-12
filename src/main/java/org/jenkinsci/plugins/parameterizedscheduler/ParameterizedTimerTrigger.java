@@ -110,9 +110,4 @@ public class ParameterizedTimerTrigger extends Trigger<Job> {
 	public String getParameterizedSpecification() {
 		return parameterizedSpecification;
 	}
-
-	@Override
-	public TriggerDescriptor getDescriptor() {
-		return new DescriptorImpl();
-	}
 }
