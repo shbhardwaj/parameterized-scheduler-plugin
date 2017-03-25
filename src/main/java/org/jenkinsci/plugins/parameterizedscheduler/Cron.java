@@ -1,9 +1,11 @@
 package org.jenkinsci.plugins.parameterizedscheduler;
 
 import hudson.Extension;
-import hudson.model.PeriodicWork;
 import hudson.model.AbstractProject;
+import hudson.model.PeriodicWork;
 import hudson.triggers.Trigger;
+import jenkins.model.Jenkins;
+import org.jenkinsci.plugins.workflow.job.WorkflowJob;
 
 import java.util.Calendar;
 import java.util.Collection;
@@ -12,9 +14,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import jenkins.model.Jenkins;
-import org.jenkinsci.plugins.workflow.job.WorkflowJob;
-
 @Extension
 public class Cron extends PeriodicWork {
 	private static final Logger LOGGER = Logger.getLogger(Cron.class.getName());
@@ -22,14 +21,12 @@ public class Cron extends PeriodicWork {
 	@Override
 	public long getRecurrencePeriod() {
 		long period = TimeUnit.MINUTES.toMillis(1);
-		LOGGER.warning("period set to " + period);
+		LOGGER.log(Level.FINEST, "period set to {0}", period);
 		return period;
 	}
 
 	@Override
 	protected void doRun() throws Exception {
-		LOGGER.finer("dorun-run");
-
 		Jenkins instance = Jenkins.getInstance();
 
 		if (instance == null) { // soon to be removed, on 2.4 IIRC
@@ -51,7 +48,7 @@ public class Cron extends PeriodicWork {
 
 		for (Trigger<?> trigger : triggers) {
 			if (trigger instanceof ParameterizedTimerTrigger) {
-				LOGGER.fine("cron checking " + projectName);
+				LOGGER.log(Level.FINE, "cron checking {0}", projectName);
 				ParameterizedTimerTrigger ptTrigger = (ParameterizedTimerTrigger) trigger;
 
 				try {
