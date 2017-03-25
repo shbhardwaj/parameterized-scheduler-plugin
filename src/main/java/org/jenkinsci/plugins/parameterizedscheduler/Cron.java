@@ -33,6 +33,10 @@ public class Cron extends PeriodicWork {
 	private void checkTriggers(Calendar calendar) {
 		Jenkins instance = Jenkins.getInstance();
 
+		if (instance == null) { // soon to be removed, on 2.4 IIRC
+			throw new IllegalStateException("Jenkins instance cannot really be null at this point");
+		}
+
 		for (AbstractProject<?, ?> project : instance.getAllItems(AbstractProject.class)) {
 			for (Trigger<?> trigger : project.getTriggers().values()) {
 				if (trigger instanceof ParameterizedTimerTrigger) {

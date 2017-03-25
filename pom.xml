@@ -5,12 +5,16 @@
 	<parent>
 		<groupId>org.jenkins-ci.plugins</groupId>
 		<artifactId>plugin</artifactId>
-		<version>1.565.3</version>
+		<version>2.25</version>
 	</parent>
 
 	<artifactId>parameterized-scheduler</artifactId>
 	<version>0.4-SNAPSHOT</version>
 	<packaging>hpi</packaging>
+
+	<properties>
+		<jenkins.version>1.642.3</jenkins.version>
+	</properties>
 
 	<name>Parameterized Scheduler</name>
 	<description>Lets you define many cron-like format but with additional parameters for each definition</description>
@@ -61,22 +65,4 @@
 		</dependency>
 	</dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.3</version>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<version>2.5.3</version>
-			</plugin>
-		</plugins>
-	</build>
 </project>
