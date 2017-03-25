@@ -1,3 +1,6 @@
 = Changes for the _Jenkins Parameterized Scheduler Plugin_
 
 * 0.1 : First release to the world
+* 0.2 : Not user facing change
+* 0.4-beta-1 Pipeline support Beta link:https://issues.jenkins-ci.org/browse/JENKINS-37139[JENKINS-37139]
+* 0.4 (upcoming) Pipeline support
