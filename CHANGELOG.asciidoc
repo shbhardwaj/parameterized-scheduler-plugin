@@ -3,4 +3,5 @@
 * 0.1 : First release to the world
 * 0.2 : Not user facing change
 * 0.4-beta-1 Pipeline support Beta link:https://issues.jenkins-ci.org/browse/JENKINS-37139[JENKINS-37139]
-* 0.4 (upcoming) Pipeline support
+* 0.4 Pipeline support
+* 0.5 [Declarative pipeline syntax support](https://github.com/jenkinsci/parameterized-scheduler-plugin#declarative-pipeline-configuration-example) and [JENKINS-44031](https://issues.jenkins-ci.org/browse/JENKINS-44031) fix.
