@@ -41,7 +41,7 @@ Then you might want a schedule like the following:
 ```
   # leave spaces where you want them around the parameters. They'll be trimmed.
   # we let the build run with the default name
-  5 * * * *%furniture=chair;color=black
+  5 * * * * % furniture=chair;color=black
   # now, let's override that default name and use Mr. Rubble.
   10 * * * * % furniture=desk; color=yellow; name=barney
 ```
