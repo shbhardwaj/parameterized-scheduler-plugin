@@ -1,26 +1,6 @@
 package org.jenkinsci.plugins.parameterizedscheduler;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Type;
-import java.security.Principal;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Enumeration;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.ServletInputStream;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpSession;
-
 import net.sf.json.JSONObject;
-
 import org.apache.commons.fileupload.FileItem;
 import org.kohsuke.stapler.Ancestor;
 import org.kohsuke.stapler.BindInterceptor;
@@ -30,6 +10,32 @@ import org.kohsuke.stapler.StaplerResponse;
 import org.kohsuke.stapler.WebApp;
 import org.kohsuke.stapler.bind.BoundObjectTable;
 import org.kohsuke.stapler.lang.Klass;
+
+import javax.servlet.AsyncContext;
+import javax.servlet.DispatcherType;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.ServletInputStream;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpUpgradeHandler;
+import javax.servlet.http.Part;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Type;
+import java.security.Principal;
+import java.util.Calendar;
+import java.util.Collection;
+import java.util.Date;
+import java.util.Enumeration;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
 public class ParameterizedStaplerRequest implements StaplerRequest {
 
@@ -56,6 +62,11 @@ public class ParameterizedStaplerRequest implements StaplerRequest {
 
 	@Override
 	public String getHeader(String name) {
+		return null;
+	}
+
+	@Override
+	public <T extends HttpUpgradeHandler> T upgrade(Class<T> handlerClass) throws IOException, ServletException {
 		return null;
 	}
 
@@ -147,6 +158,11 @@ public class ParameterizedStaplerRequest implements StaplerRequest {
 	}
 
 	@Override
+	public String changeSessionId() {
+		return null;
+	}
+
+	@Override
 	public boolean isRequestedSessionIdValid() {
 		return false;
 	}
@@ -164,6 +180,31 @@ public class ParameterizedStaplerRequest implements StaplerRequest {
 	@Override
 	public boolean isRequestedSessionIdFromUrl() {
 		return false;
+	}
+
+	@Override
+	public boolean authenticate(HttpServletResponse response) throws IOException, ServletException {
+		return false;
+	}
+
+	@Override
+	public void login(String username, String password) throws ServletException {
+
+	}
+
+	@Override
+	public void logout() throws ServletException {
+
+	}
+
+	@Override
+	public Collection<Part> getParts() throws IOException, ServletException {
+		return null;
+	}
+
+	@Override
+	public Part getPart(String name) throws IOException, ServletException {
+		return null;
 	}
 
 	@Override
@@ -189,6 +230,11 @@ public class ParameterizedStaplerRequest implements StaplerRequest {
 
 	@Override
 	public int getContentLength() {
+		return 0;
+	}
+
+	@Override
+	public long getContentLengthLong() {
 		return 0;
 	}
 
@@ -337,6 +383,36 @@ public class ParameterizedStaplerRequest implements StaplerRequest {
 
 	@Override
 	public ServletContext getServletContext() {
+		return null;
+	}
+
+	@Override
+	public AsyncContext startAsync() throws IllegalStateException {
+		return null;
+	}
+
+	@Override
+	public AsyncContext startAsync(ServletRequest servletRequest, ServletResponse servletResponse) throws IllegalStateException {
+		return null;
+	}
+
+	@Override
+	public boolean isAsyncStarted() {
+		return false;
+	}
+
+	@Override
+	public boolean isAsyncSupported() {
+		return false;
+	}
+
+	@Override
+	public AsyncContext getAsyncContext() {
+		return null;
+	}
+
+	@Override
+	public DispatcherType getDispatcherType() {
 		return null;
 	}
 
