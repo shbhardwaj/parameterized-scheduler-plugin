@@ -39,7 +39,7 @@ public class ParameterizedCronTabList {
 			try {
 				result.add(ParameterizedCronTab.create(line, lineNumber, hash));
 			} catch (ANTLRException e) {
-				throw new ANTLRException(Messages.CronTabList_InvalidInput(line, e.toString()), e);
+				throw new ANTLRException(String.format("Invalid input: \"%s\": %s", line, e.toString()), e);
 			}
 		}
 		return new ParameterizedCronTabList(result);
