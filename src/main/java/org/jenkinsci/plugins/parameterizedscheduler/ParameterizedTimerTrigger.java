@@ -78,7 +78,7 @@ public class ParameterizedTimerTrigger extends Trigger<Job> {
 			ParametersAction parametersAction = new ParametersAction(configurePropertyValues(parameterValues));
 			assert job != null : "job must not be null, if this was 'started'";
 			if (job instanceof AbstractProject) {
-				((AbstractProject) job).scheduleBuild2(0, null, causeAction(parameterValues), parametersAction);
+				((AbstractProject) job).scheduleBuild2(0, (Cause)null, causeAction(parameterValues), parametersAction);
 			} else if (jenkins != null && jenkins.getPlugin("workflow-job") != null && job instanceof WorkflowJob) {
 				((WorkflowJob) job).scheduleBuild2(0, causeAction(parameterValues), parametersAction);
 			}
