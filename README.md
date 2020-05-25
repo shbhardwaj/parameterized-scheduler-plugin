@@ -7,7 +7,7 @@ will be implemented in Jenkins core. Then this plugin will no longer be needed. 
 This plugin now supports [declarative Jenkins pipelines](https://jenkins.io/doc/book/pipeline/syntax/#declarative-pipeline). See configuration example below.
 
 ## Installation ##
-Clone or fork to build the .hpi yourself (_mvn package_) or download the .hpi from my release. Then follow the [Jenkins Plugin installation instructions](https://wiki.jenkins-ci.org/display/JENKINS/Plugins#Plugins-Howtoinstallplugins)
+To install this plugin follow the [Jenkins Plugin installation instructions](https://www.jenkins.io/doc/book/managing/plugins/)
 
 ## Configuration ##
 
