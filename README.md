@@ -82,3 +82,18 @@ Example Output in Jenkins
 =========================
 ![Example Output in Jenkins](https://raw.githubusercontent.com/jenkinsci/parameterized-scheduler-plugin/master/site/images/scheduledBuilds.PNG)
 
+
+## Scripted Pipeline Example
+
+```
+properties(
+  parameters([
+    string(name: 'PLANET', defaultValue: 'Earth', description: 'Which planet are we on?'),
+    string(name: 'GREETING', defaultValue: 'Hello', description: 'How shall we greet?')
+  ]),
+  pipelineTriggers([
+    parameterizedCron('*/2 * * * * %GREETING=Hola;PLANET=Pluto'),
+    parameterizedCron('*/3 * * * * %PLANET=Mars')
+  ])
+)
+```
