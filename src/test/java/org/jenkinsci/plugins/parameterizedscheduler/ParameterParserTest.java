@@ -1,10 +1,12 @@
 package org.jenkinsci.plugins.parameterizedscheduler;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import hudson.model.ParametersDefinitionProperty;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -153,8 +155,14 @@ public class ParameterParserTest {
 	@Test
 	public void checkSanity_UnmatchedEquals() throws Exception {
 		ParameterParser testObject = new ParameterParser();
-
 		testObject.checkSanity("* * * * *%name=value;name2=", mockParametersDefinitionProperty);
+	}
+
+	@Test
+	public void checkSanity_NullParameters() throws Exception {
+		ParameterParser testObject = new ParameterParser();
+		assertEquals(Messages.ParameterizedTimerTrigger_UndefinedParameter(Collections.singletonList("name"), Collections.emptyList()),
+				testObject.checkSanity("* * * * *%name=value", null));
 	}
 
 }

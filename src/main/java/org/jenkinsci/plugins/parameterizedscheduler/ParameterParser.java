@@ -2,10 +2,10 @@ package org.jenkinsci.plugins.parameterizedscheduler;
 
 import hudson.model.ParametersDefinitionProperty;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.apache.commons.lang.StringUtils;
 import org.jenkinsci.plugins.parameterizedscheduler.Messages;
@@ -47,9 +47,9 @@ public class ParameterParser {
 			if (split.length == 2) {
 				try {
 					Map<String, String> parsedParameters = parse(split[1]);
-					List<String> parameterDefinitionNames = parametersDefinitionProperty.getParameterDefinitionNames();
-					List<String> parsedKeySet = new ArrayList<>(parsedParameters.keySet());
-					parsedKeySet.removeAll(parameterDefinitionNames);
+					List<String> parameterDefinitionNames = parametersDefinitionProperty != null
+							? parametersDefinitionProperty.getParameterDefinitionNames() : Collections.emptyList();
+					List<String> parsedKeySet = parsedParameters.keySet().stream().filter(s -> !parameterDefinitionNames.contains(s)).collect(Collectors.toList());
 					if (!parsedKeySet.isEmpty()) {
 						return Messages.ParameterizedTimerTrigger_UndefinedParameter(parsedKeySet, parameterDefinitionNames);
 					}
