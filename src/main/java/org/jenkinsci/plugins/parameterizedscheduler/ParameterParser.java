@@ -34,7 +34,7 @@ public class ParameterParser {
 			//the default splitter message in this scenario is not user friendly, so snip a trailing semicolon
 			clean = clean.substring(0, clean.length() - 1);
 		}
-		return Splitter.on(PAIR_SEPARATOR).trimResults().withKeyValueSeparator(NAME_VALUE_SEPARATOR).split(clean);
+		return Splitter.on(PAIR_SEPARATOR).trimResults().withKeyValueSeparator(Splitter.on(NAME_VALUE_SEPARATOR).limit(2)).split(clean);
 	}
 
 	public String checkSanity(String cronTabSpec, ParametersDefinitionProperty parametersDefinitionProperty) {

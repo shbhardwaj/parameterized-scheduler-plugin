@@ -92,6 +92,15 @@ public class ParameterParserTest {
 	}
 
 	@Test
+	public void test_ValueContainsEquals_emptyMap() {
+		ParameterParser testObject = new ParameterParser();
+
+		HashMap<String, String> expected = new HashMap<String, String>();
+		expected.put("name", "value=contains=equals");
+		assertEquals(expected, testObject.parse("name=value=contains=equals"));
+	}
+
+	@Test
 	public void checkSanity_HappyPath() throws Exception {
 		ParameterParser testObject = new ParameterParser();
 
