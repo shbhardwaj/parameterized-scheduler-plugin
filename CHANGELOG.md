@@ -1,5 +1,8 @@
 # Changes for the _Jenkins Parameterized Scheduler Plugin_
 
+## DEPRECATED
+The changelog for new versions is at https://github.com/jenkinsci/parameterized-scheduler-plugin/releases
+
 ## [0.6.3] - 2017-10-14
 ### Set scheduler second to zero
 
