@@ -1,10 +1,9 @@
 package org.jenkinsci.plugins.parameterizedscheduler;
 
+import org.junit.Test;
+
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertSame;
-
-import org.jenkinsci.plugins.parameterizedscheduler.ParameterizedStaplerRequest;
-import org.junit.Test;
 
 public class ParameterizedStaplerRequestTest {
 

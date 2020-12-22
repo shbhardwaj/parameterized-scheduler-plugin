@@ -1,9 +1,8 @@
 package org.jenkinsci.plugins.parameterizedscheduler;
 
-import static org.junit.Assert.assertSame;
-
-import org.jenkinsci.plugins.parameterizedscheduler.ParameterizedTimerTrigger;
 import org.junit.Test;
+
+import static org.junit.Assert.assertSame;
 
 public class ParameterizedTimerTriggerTest {
 
@@ -13,6 +12,5 @@ public class ParameterizedTimerTriggerTest {
 		ParameterizedTimerTrigger testObject = new ParameterizedTimerTrigger(parameterizedSpecification);
 
 		assertSame(parameterizedSpecification, testObject.getParameterizedSpecification());
-
 	}
 }
