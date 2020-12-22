@@ -7,16 +7,16 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.runners.MockitoJUnitRunner;
-
-import com.google.common.collect.Maps;
+import org.mockito.junit.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ParameterizedCronTabListTest {
@@ -32,9 +32,7 @@ public class ParameterizedCronTabListTest {
 		ParameterizedCronTab actualCronTab = testObject.check(new GregorianCalendar());
 		assertNotNull(actualCronTab);
 
-		Map<String, String> expected = Maps.newHashMap();
-		expected.put("foo", "bar");
-		assertEquals(expected, actualCronTab.getParameterValues());
+		assertEquals(Collections.singletonMap("foo", "bar"), actualCronTab.getParameterValues());
 	}
 
 	@Test
@@ -58,7 +56,7 @@ public class ParameterizedCronTabListTest {
 		Mockito.when(mockParameterizedCronTab.check(testCalendar)).thenReturn(true);
 		assertSame(mockParameterizedCronTab, testObject.check(testCalendar));
 
-		Mockito.verifyZeroInteractions(mockParameterizedCronTabToo);
+		Mockito.verifyNoInteractions(mockParameterizedCronTabToo);
 	}
 
 	@Test
@@ -69,7 +67,6 @@ public class ParameterizedCronTabListTest {
 
 		Mockito.when(mockParameterizedCronTabToo.check(testCalendar)).thenReturn(true);
 		assertSame(mockParameterizedCronTabToo, testObject.check(testCalendar));
-
 	}
 
 	@Test
@@ -92,7 +89,7 @@ public class ParameterizedCronTabListTest {
 		Mockito.when(mockParameterizedCronTab.checkSanity()).thenReturn(sanityValue);
 		assertSame(sanityValue, testObject.checkSanity());
 
-		Mockito.verifyZeroInteractions(mockParameterizedCronTabToo);
+		Mockito.verifyNoInteractions(mockParameterizedCronTabToo);
 	}
 
 	@Test
@@ -103,7 +100,6 @@ public class ParameterizedCronTabListTest {
 		String sanityValue = "foo";
 		Mockito.when(mockParameterizedCronTabToo.checkSanity()).thenReturn(sanityValue);
 		assertSame(sanityValue, testObject.checkSanity());
-
 	}
 
 }

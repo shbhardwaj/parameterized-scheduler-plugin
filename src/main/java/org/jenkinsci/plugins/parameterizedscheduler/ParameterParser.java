@@ -21,9 +21,9 @@ public class ParameterParser {
 	private static final String PAIR_SEPARATOR = ";";
 
 	/**
-	 * 
+	 * Parses a string with key value pairs
 	 * @param nameValuePairFormattedString of name=value;other=value name value pairs
-	 * @return
+	 * @return Map of key-value pairs parsed from provided string
 	 */
 	public Map<String, String> parse(String nameValuePairFormattedString) {
 		if (StringUtils.isBlank(nameValuePairFormattedString)) {
