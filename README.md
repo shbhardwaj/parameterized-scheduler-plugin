@@ -1,16 +1,16 @@
-Parameterized Scheduler
-=======================
+# Parameterized Scheduler
 
 [![Jenkins](https://ci.jenkins.io/job/Plugins/job/parameterized-scheduler-plugin/job/master/badge/icon)](https://ci.jenkins.io/job/Plugins/job/parameterized-scheduler-plugin/job/master/)
 [![Jenkins Plugin](https://img.shields.io/jenkins/plugin/v/parameterized-scheduler.svg)](https://plugins.jenkins.io/parameterized-scheduler)
 [![GitHub release](https://img.shields.io/github/release/jenkinsci/parameterized-scheduler-plugin.svg?label=changelog)](https://github.com/jenkinsci/parameterized-scheduler-plugin/releases/latest)
 
-A Jenkins Plugin to support setting parameters in the build schedule. Using multiple cron lines each ending with a % and some name=value pairs you can schedule your parameterized build to run with different parameters at different times.
+A Jenkins Plugin to support setting parameters in the build schedule. Using multiple cron lines each ending with a `%` and some `name=value` pairs you can schedule your parameterized build to run with different parameters at different times.
 
-## Installation ##
-To install this plugin follow the [Jenkins Plugin installation instructions](https://www.jenkins.io/doc/book/managing/plugins/)
+## Installation
 
-## Configuration ##
+To install this plugin follow the [Jenkins Plugin installation instructions](https://www.jenkins.io/doc/book/managing/plugins/).
+
+## Configuration
 
 After you save your project with some parameters (yes, save, then go back into the config page) you will see
 >Build periodically with parameters
@@ -19,18 +19,18 @@ in the *Build Triggers* section as shown here:
 
 ![Parameterized Schedular Config](https://raw.githubusercontent.com/jenkinsci/parameterized-scheduler-plugin/master/site/images/configurationexample.png)
 
-## Configuration Example ##
-The cron line before the _%_ symbol is processed the same as the jenkins core _Build periodically Schedule_. Leave a space. Put in a _%_. Then add the name=value pairs you need for your project build parameters.
+## Configuration Example
 
-The idea was born from the need to use a different environment. To use a different TestNG configuration xml. In this example the _env_ parameter will be set to int during the build triggered at 15 after each hour. Then _env_ will be qa when the build runs at half past.
+The cron line before the `%` symbol is processed the same as the jenkins core _Build periodically Schedule_. Leave a space. Put in a `%`. Then add the `name=value` pairs you need for your project build parameters.
+
+The idea was born from the need to use a different environment. To use a different TestNG configuration xml. In this example the `env` parameter will be set to int during the build triggered at 15 after each hour. Then `env` will be qa when the build runs at half past.
 
 ```
-  #lets run against the integration environment at 15 past the hour
-  15 * * * * % env=int
-  #run QA too
-  30 * * * % env=qa
+# lets run against the integration environment at 15 past the hour
+15 * * * * %env=int
+# run QA too
+30 * * * % %env=qa
 ```
-
 
 Yes, of course you can set multiple parameters. Lets say you have three parameters:
 - furniture
@@ -40,14 +40,14 @@ Yes, of course you can set multiple parameters. Lets say you have three paramete
 Then you might want a schedule like the following:
 
 ```
-  # leave spaces where you want them around the parameters. They'll be trimmed.
-  # we let the build run with the default name
-  5 * * * * % furniture=chair;color=black
-  # now, let's override that default name and use Mr. Rubble.
-  10 * * * * % furniture=desk; color=yellow; name=barney
+# leave spaces where you want them around the parameters. They'll be trimmed.
+# we let the build run with the default name
+5 * * * * %furniture=chair;color=black
+# now, let's override that default name and use Mr. Rubble.
+10 * * * * %furniture=desk;color=yellow;name=barney
 ```
 
-## Declarative Pipeline Configuration Example ##
+## Declarative Pipeline Configuration Example
 
 The parameterized cron trigger can be specified using the key `parameterizedSpecification` under the `parameterizedCron` under the [triggers directive](https://jenkins.io/doc/book/pipeline/syntax/#declarative-directives). The built in `cron` trigger is still available and is independent of `parameterizedCron`.
 
@@ -79,10 +79,9 @@ pipeline {
 }
 ```
 
-Example Output in Jenkins
-=========================
-![Example Output in Jenkins](https://raw.githubusercontent.com/jenkinsci/parameterized-scheduler-plugin/master/site/images/scheduledBuilds.PNG)
+## Example Output in Jenkins
 
+![Example Output in Jenkins](https://raw.githubusercontent.com/jenkinsci/parameterized-scheduler-plugin/master/site/images/scheduledBuilds.PNG)
 
 ## Scripted Pipeline Example
 
