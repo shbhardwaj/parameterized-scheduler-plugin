@@ -1,16 +1,13 @@
 package org.jenkinsci.plugins.parameterizedscheduler;
 
+import com.google.common.base.Splitter;
 import hudson.model.ParametersDefinitionProperty;
+import org.apache.commons.lang.StringUtils;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
-import org.apache.commons.lang.StringUtils;
-import org.jenkinsci.plugins.parameterizedscheduler.Messages;
-
-import com.google.common.base.Splitter;
 
 public class ParameterParser {
 	/**
