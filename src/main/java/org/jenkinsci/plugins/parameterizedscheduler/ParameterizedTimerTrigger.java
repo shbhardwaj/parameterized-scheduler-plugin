@@ -46,7 +46,7 @@ public class ParameterizedTimerTrigger extends Trigger<Job> {
 
 	/**
 	 * this method started out as hudson.model.AbstractProject.getDefaultParametersValues()
-	 * @param parameterValues 
+	 * @param parameterValues A map of parameters and their values
 	 * @return the ParameterValues as set from the crontab row or their defaults
 	 */
 	private List<ParameterValue> configurePropertyValues(Map<String, String> parameterValues) {
