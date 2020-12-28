@@ -20,9 +20,7 @@ public class Cron extends PeriodicWork {
 
 	@Override
 	public long getRecurrencePeriod() {
-		long period = TimeUnit.MINUTES.toMillis(1);
-		LOGGER.log(Level.FINEST, "period set to {0}", period);
-		return period;
+		return TimeUnit.MINUTES.toMillis(1);
 	}
 
 	@Override
