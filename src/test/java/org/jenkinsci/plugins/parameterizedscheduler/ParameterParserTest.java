@@ -146,8 +146,8 @@ public class ParameterParserTest {
 		ParameterParser testObject = new ParameterParser();
 		Mockito.when(mockParametersDefinitionProperty.getParameterDefinitionNames()).thenReturn(
 				Arrays.asList("name", "name2"));
-		// TODO: Warn on missing value
-		assertNull(testObject.checkSanity("* * * * *%name=value;name2=", mockParametersDefinitionProperty));
+		assertEquals(Messages.ParameterizedTimerTrigger_EmptyParameter(Collections.singletonList("name2")),
+				testObject.checkSanity("* * * * *%name=value;name2=", mockParametersDefinitionProperty));
 	}
 
 	@Test

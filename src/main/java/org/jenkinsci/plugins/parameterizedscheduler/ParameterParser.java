@@ -50,6 +50,10 @@ public class ParameterParser {
 					if (!parsedKeySet.isEmpty()) {
 						return Messages.ParameterizedTimerTrigger_UndefinedParameter(parsedKeySet, parameterDefinitionNames);
 					}
+					List<String> emptyParameters = parsedParameters.keySet().stream().filter(k -> parsedParameters.get(k).isEmpty()).collect(Collectors.toList());
+					if (!emptyParameters.isEmpty()) {
+						return Messages.ParameterizedTimerTrigger_EmptyParameter(emptyParameters);
+					}
 				} catch (IllegalArgumentException e) {
 					return e.getMessage();
 				}
