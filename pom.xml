@@ -9,7 +9,7 @@
 	</parent>
 
 	<artifactId>parameterized-scheduler</artifactId>
-	<version>0.9.2</version>
+	<version>${revision}${changelist}</version>
 	<packaging>hpi</packaging>
 
 	<properties>
@@ -44,7 +44,7 @@
 		<connection>scm:git:git://github.com/${gitHubRepo}.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com/${gitHubRepo}.git</developerConnection>
 		<url>https://github.com/${gitHubRepo}</url>
-		<tag>parameterized-scheduler-0.9.2</tag>
+		<tag>${scmTag}</tag>
 	</scm>
 
 	<repositories>
