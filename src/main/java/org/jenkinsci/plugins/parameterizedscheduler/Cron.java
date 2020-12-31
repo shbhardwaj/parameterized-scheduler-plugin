@@ -20,9 +20,7 @@ public class Cron extends PeriodicWork {
 
 	@Override
 	public long getRecurrencePeriod() {
-		long period = TimeUnit.MINUTES.toMillis(1);
-		LOGGER.log(Level.FINEST, "period set to {0}", period);
-		return period;
+		return TimeUnit.MINUTES.toMillis(1);
 	}
 
 	@Override
@@ -32,20 +30,14 @@ public class Cron extends PeriodicWork {
 
 	@Override
 	protected void doRun() throws Exception {
-		Jenkins instance = Jenkins.getInstance();
+		Jenkins instance = Jenkins.get();
 
-		if (instance == null) { // soon to be removed, on 2.4 IIRC
-			throw new IllegalStateException("Jenkins instance cannot really be null at this point");
-		}
-
-		for (AbstractProject<?, ?> project : instance.getAllItems(AbstractProject.class)) {
+		for (AbstractProject<?, ?> project : instance.allItems(AbstractProject.class)) {
 			checkTriggers(project.getName(), project.getTriggers().values(), new GregorianCalendar());
 		}
 
-		if (instance.getPlugin("workflow-job") != null) {
-			for (WorkflowJob workflowJob : instance.getAllItems(WorkflowJob.class)) {
-				checkTriggers(workflowJob.getName(), workflowJob.getTriggers().values(), new GregorianCalendar());
-			}
+		for (WorkflowJob workflowJob : instance.allItems(WorkflowJob.class)) {
+			checkTriggers(workflowJob.getName(), workflowJob.getTriggers().values(), new GregorianCalendar());
 		}
 	}
 

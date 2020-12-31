@@ -29,7 +29,7 @@ public class ParameterizedCronTabList {
 	}
 
 	public static ParameterizedCronTabList create(String cronTabSpecification, Hash hash) throws ANTLRException {
-		List<ParameterizedCronTab> result = new ArrayList<ParameterizedCronTab>();
+		List<ParameterizedCronTab> result = new ArrayList<>();
 		int lineNumber = 0;
 		String timezone = null;
 		for (String line : cronTabSpecification.split("\\r?\\n")) {

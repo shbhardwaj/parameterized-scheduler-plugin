@@ -1,20 +1,17 @@
 package org.jenkinsci.plugins.parameterizedscheduler;
 
-import static org.junit.Assert.assertEquals;
-
-import java.util.Map;
-
-import org.jenkinsci.plugins.parameterizedscheduler.Messages;
-import org.jenkinsci.plugins.parameterizedscheduler.ParameterizedTimerTriggerCause;
 import org.junit.Test;
 
-import com.google.common.collect.Maps;
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.junit.Assert.assertEquals;
 
 public class ParameterizedTimerTriggerCauseTest {
 
 	@Test
 	public void happyPath() {
-		Map<String, String> parameters = Maps.newHashMap();
+		Map<String, String> parameters = new HashMap<>();
 		parameters.put("o", "v");
 		ParameterizedTimerTriggerCause testObject = new ParameterizedTimerTriggerCause(parameters);
 

@@ -4,9 +4,8 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.Map;
 
-import com.google.common.collect.Maps;
-
 import antlr.ANTLRException;
+import com.google.common.collect.Maps;
 import hudson.scheduler.CronTab;
 import hudson.scheduler.CronTabList;
 import hudson.scheduler.Hash;
